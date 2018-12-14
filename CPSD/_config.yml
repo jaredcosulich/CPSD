@@ -1,0 +1,27 @@
+# site settings
+title: CPSD Data
+subtitle: An exploration of Cambridge Public Schools Data
+email: jared.cosulich@gmail.com
+description: An exploration of data released by Cambridge Public Schools<br />created by a parent who is trying to be more informed citizen.
+baseurl:  # the subpath of your site, e.g. /blog
+url: # the base hostname & protocol for your site
+author:
+street_address: 1234 Somewhere Road
+city: Nashville
+state: TN
+zip_code: 55555
+country: United States of America
+phone: (716) 555-5555
+
+# homepage tiles
+tiles-source: pages # accepts "posts" or "pages"
+tiles-count: 10
+
+# social settings
+github_url: https://github.com/jaredcosulich/CPSD
+
+# build settings
+markdown: kramdown
+
+sass:
+  style: compressed
