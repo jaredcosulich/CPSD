@@ -6,4 +6,11 @@
 	<link rel="stylesheet" href="{{ "assets/css/main.css" | relative_url }}" />
 	<!--[if lte IE 9]><link rel="stylesheet" href="{{ "assets/css/ie9.css" | relative_url }}" /><![endif]-->
 	<!--[if lte IE 8]><link rel="stylesheet" href="{{ "assets/css/ie8.css" | relative_url }}" /><![endif]-->
+
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+
+	{% for js in page.js %}
+	<script async type="text/javascript" src="/assets/js{{ js }}.js"></script>
+	{% endfor %}
+
 </head>

@@ -17,10 +17,10 @@
 		background-size: cover;
 		border-bottom: 0 !important;
 		cursor: default;
-		height: 60vh;
+		height: 40vh;
 		margin-bottom: -3.25em;
-		max-height: 32em;
-		min-height: 22em;
+		max-height: 30em;
+		min-height: 20em;
 		position: relative;
 		top: -3.25em;
 
@@ -95,9 +95,9 @@
 		}
 
 		&.major {
-			height: 75vh;
+			height: 60vh;
 			min-height: 30em;
-			max-height: 50em;
+			max-height: 45em;
 
 			&.alt {
 				  opacity: 0.75;

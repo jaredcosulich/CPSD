@@ -1,1 +1,72 @@
-category,item,amountAdministrative,School Committee,490383.35Administrative,Superintendent,453233.79Administrative,Assistant Superintendents,731503.06Administrative,Other District-Wide Administration,722130.37Administrative,Business and Finance,2982136.58Administrative,Human Resources,926041.35Administrative,Legal Service for School Committee,289250.99Administrative,Legal Settlements,458571.24Administrative,District-wide Information Systems,1457261.28Instructional Leadership,Curriculum Directors  (Supervisory),3468571.72Instructional Leadership,Dept Heads (Non-Supervisory),0Instructional Leadership,School Leadership,6352501.43Instructional Leadership,Curriculum Leaders (School Level),941277.14Instructional Leadership,Admin. Technology (School Level),714224.22Instructional Leadership,Instructional Coordinators,1299380.9Teachers,"Teachers, Classroom",46038135.31Teachers,"Teachers, Specialists",11987014.41Other Teaching Services,Medical/ Therapeutic Services,4072407.38Other Teaching Services,Substitute Teachers,2134070.17Other Teaching Services,Paraprofessionals,7645329.66Other Teaching Services,Librarians/Media Center Directors,2170040.47Professional Development,Professional Development Leaders,119303Professional Development,Professional Days,0Professional Development,Substitutes for Prof. Development,131503.48Professional Development,Professional Development Costs,5080221.98Instructional Materials/Equip/Tech,"Textbooks, Software/Media/Matls",172086.11Instructional Materials/Equip/Tech,Instructional Matls (Libraries),1884332.53Instructional Materials/Equip/Tech,Instructional Equipment,45605.68Instructional Materials/Equip/Tech,General Classroom Supplies,47218Instructional Materials/Equip/Tech,Other Instructional Services,3223220.74Instructional Materials/Equip/Tech,Classroom Technology,592048.44Instructional Materials/Equip/Tech,Technology (Libraries),6365.34Instructional Materials/Equip/Tech,Instructional Software,253120.6"Guidance, Counseling, Testing",Guidance/Adjustment Counselors,3724476.81"Guidance, Counseling, Testing",Testing and Assessment,0"Guidance, Counseling, Testing",Psychological Services,2026477.27Pupil Services,Attendance and Parent Liaisons,1117025.26Pupil Services,Medical/Health Services,2532612.11Pupil Services,Transportation Services,5115766.73Pupil Services,Food Services,3267195.98Pupil Services,Athletics,1281274.41Pupil Services,Other Student Activities,1112510.2Pupil Services,School Security,2015688.05Operations and Maintenance,Custodial Services,4108270.62Operations and Maintenance,Heating of Buildings,777807Operations and Maintenance,Utility Services,2370497.57Operations and Maintenance,Maintenance of Grounds,472597Operations and Maintenance,Maintenance of Buildings,2616065.24Operations and Maintenance,Building Security System,156585Operations and Maintenance,Maintenance of Equipment,5261.9Operations and Maintenance,Extraordinary Maintenance,2700Operations and Maintenance,Networking/Telecommunications,309975.79Operations and Maintenance,Technology Maintenance,313224Benefits and Fixed Charges,Employer Retirement Contributions,4432346.41Benefits and Fixed Charges,Employee Separation Costs,630897.64Benefits and Fixed Charges,Insurance for Active Employees,26542625.04Benefits and Fixed Charges,Insurance for Retired Employees,6594240Benefits and Fixed Charges,Other Non-Employee Insurance,15130Benefits and Fixed Charges,Rental Lease of Equipment,0Benefits and Fixed Charges,Rental Lease of Buildings,225072.66Benefits and Fixed Charges,Short Term Interest RANs,0Benefits and Fixed Charges,Other Fixed Charges,2949189.15Benefits and Fixed Charges,School Crossing Guards,508159Out-of-District Expenditures,Tuition to Mass. Schools,557642Out-of-District Expenditures,Tuition for School Choice,19610Out-of-District Expenditures,Tuition to Commonwealth Charter Schools,12739760Out-of-District Expenditures,Tuition to Horace Mann Charter Schools,0Out-of-District Expenditures,Tuition to Out-of-State Schools,640095Out-of-District Expenditures,Tuition to Non-Public Schools,13471478.81Out-of-District Expenditures,Tuition to Collaboratives,458251Out-of-District Expenditures,Transportation,2708499.96
+category,item,amount
+Administrative,School Committee,490383.35
+Administrative,Superintendent,453233.79
+Administrative,Assistant Superintendents,731503.06
+Administrative,Other District-Wide Administration,722130.37
+Administrative,Business and Finance,2982136.58
+Administrative,Human Resources,926041.35
+Administrative,Legal Service for School Committee,289250.99
+Administrative,Legal Settlements,458571.24
+Administrative,District-wide Information Systems,1457261.28
+Instructional Leadership,Curriculum Directors  (Supervisory),3468571.72
+Instructional Leadership,Dept Heads (Non-Supervisory),0
+Instructional Leadership,School Leadership,6352501.43
+Instructional Leadership,Curriculum Leaders (School Level),941277.14
+Instructional Leadership,Admin. Technology (School Level),714224.22
+Instructional Leadership,Instructional Coordinators,1299380.9
+Teachers,"Teachers, Classroom",46038135.31
+Teachers,"Teachers, Specialists",11987014.41
+Other Teaching Services,Medical/ Therapeutic Services,4072407.38
+Other Teaching Services,Substitute Teachers,2134070.17
+Other Teaching Services,Paraprofessionals,7645329.66
+Other Teaching Services,Librarians/Media Center Directors,2170040.47
+Professional Development,Professional Development Leaders,119303
+Professional Development,Professional Days,0
+Professional Development,Substitutes for Prof. Development,131503.48
+Professional Development,Professional Development Costs,5080221.98
+Instructional Materials/Equip/Tech,"Textbooks, Software/Media/Matls",172086.11
+Instructional Materials/Equip/Tech,Instructional Matls (Libraries),1884332.53
+Instructional Materials/Equip/Tech,Instructional Equipment,45605.68
+Instructional Materials/Equip/Tech,General Classroom Supplies,47218
+Instructional Materials/Equip/Tech,Other Instructional Services,3223220.74
+Instructional Materials/Equip/Tech,Classroom Technology,592048.44
+Instructional Materials/Equip/Tech,Technology (Libraries),6365.34
+Instructional Materials/Equip/Tech,Instructional Software,253120.6
+"Guidance, Counseling, Testing",Guidance/Adjustment Counselors,3724476.81
+"Guidance, Counseling, Testing",Testing and Assessment,0
+"Guidance, Counseling, Testing",Psychological Services,2026477.27
+Pupil Services,Attendance and Parent Liaisons,1117025.26
+Pupil Services,Medical/Health Services,2532612.11
+Pupil Services,Transportation Services,5115766.73
+Pupil Services,Food Services,3267195.98
+Pupil Services,Athletics,1281274.41
+Pupil Services,Other Student Activities,1112510.2
+Pupil Services,School Security,2015688.05
+Operations and Maintenance,Custodial Services,4108270.62
+Operations and Maintenance,Heating of Buildings,777807
+Operations and Maintenance,Utility Services,2370497.57
+Operations and Maintenance,Maintenance of Grounds,472597
+Operations and Maintenance,Maintenance of Buildings,2616065.24
+Operations and Maintenance,Building Security System,156585
+Operations and Maintenance,Maintenance of Equipment,5261.9
+Operations and Maintenance,Extraordinary Maintenance,2700
+Operations and Maintenance,Networking/Telecommunications,309975.79
+Operations and Maintenance,Technology Maintenance,313224
+Benefits and Fixed Charges,Employer Retirement Contributions,4432346.41
+Benefits and Fixed Charges,Employee Separation Costs,630897.64
+Benefits and Fixed Charges,Insurance for Active Employees,26542625.04
+Benefits and Fixed Charges,Insurance for Retired Employees,6594240
+Benefits and Fixed Charges,Other Non-Employee Insurance,15130
+Benefits and Fixed Charges,Rental Lease of Equipment,0
+Benefits and Fixed Charges,Rental Lease of Buildings,225072.66
+Benefits and Fixed Charges,Short Term Interest RANs,0
+Benefits and Fixed Charges,Other Fixed Charges,2949189.15
+Benefits and Fixed Charges,School Crossing Guards,508159
+Out-of-District Expenditures,Tuition to Mass. Schools,557642
+Out-of-District Expenditures,Tuition for School Choice,19610
+Out-of-District Expenditures,Tuition to Commonwealth Charter Schools,12739760
+Out-of-District Expenditures,Tuition to Horace Mann Charter Schools,0
+Out-of-District Expenditures,Tuition to Out-of-State Schools,640095
+Out-of-District Expenditures,Tuition to Non-Public Schools,13471478.81
+Out-of-District Expenditures,Tuition to Collaboratives,458251
+Out-of-District Expenditures,Transportation,2708499.96

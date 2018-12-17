@@ -2,7 +2,7 @@
 index: 3
 title: Teaching
 layout: landing
-description: 'A look at the situation around teaching'
+snippet: A look at teaching in Cambridge
 image: assets/images/teaching.jpg
 nav-menu: true
 ---

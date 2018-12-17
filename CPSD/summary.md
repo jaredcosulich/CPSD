@@ -2,7 +2,7 @@
 index: 2
 layout: page
 title: Summary
-description: A summary of interesting findings.
+snippet: A summary of interesting findings
 nav-menu: true
 ---
 
