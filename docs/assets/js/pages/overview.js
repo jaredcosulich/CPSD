@@ -1,6 +1,6 @@
 var cambridgeDESE2017DataInterval = setInterval(function() {
   var containerId = "#cambridgeDESE2017Data"
-  if (cambridgeDESE2017Data && $(containerId).length) {
+  if (window.cambridgeDESE2017Data && $(containerId).length) {
     clearInterval(cambridgeDESE2017DataInterval);
     drawCambridgeDese2017Data(containerId, cambridgeDESE2017Data);
   }
@@ -8,7 +8,7 @@ var cambridgeDESE2017DataInterval = setInterval(function() {
 
 var allDESE2017DataInterval = setInterval(function() {
   var containerId = "#allDESE2017Data"
-  if (allDESE2017Data && $(containerId).length) {
+  if (window.allDESE2017Data && $(containerId).length) {
     clearInterval(allDESE2017DataInterval);
     drawAllDese2017Data(containerId, allDESE2017Data);
   }

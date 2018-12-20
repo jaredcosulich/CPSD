@@ -8,11 +8,12 @@ author: null
 show_tile: false
 ---
 
-My name is Jared Cosulich. I put this site together because it is
-budget season for Cambridge Public Schools again and despite following the budget
-discussions for a few years now (since my kids started in CPSD), I don't feel comfortable
-advocating in any significant way because I don't feel like I have a good handle
-on the budget.
+This site is a side project put together by Jared Cosulich.
+
+It is budget season again for Cambridge Public Schools.
+Despite many casual attempts to understand the budget since my children started in CPSD  
+I still don't feel like I have a good handle on the budget. This makes it difficult to
+advocate for any changes as an informed citizen.
 
 I know that Cambridge spends more than most districts in MA per student (around $27k)
 but I don't know if that is the right amount of money to spend. Cambridge is a complicated

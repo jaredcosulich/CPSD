@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+    <head>
+	<title>CPSD Data</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+
+	
+	<script async type="text/javascript" src="/assets/js/data/CambridgeDESE2017.js"></script>
+	
+	<script async type="text/javascript" src="/assets/js/data/AllDESE2017.js"></script>
+	
+	<script async type="text/javascript" src="/assets/js/pages/overview.js"></script>
+	
+
+</head>
+
+
+    <body>
+
+        <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header" class="alt style2">
+	<a href="http://localhost:4000//" class="logo"><strong>CPSD Data</strong> <span>An exploration of Cambridge Public Schools Data</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts.html">All posts</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/generic.html">Generic</a></li>
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/summary.html">Summary</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/teaching.html">Teaching</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Get Started</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+
+
+        <section id="banner" class="style2">
+            <div class="inner">
+                <span class="image">
+                    <img src="/assets/images/budget_overview.png" alt="">
+                </span>
+                <header class="major">
+
+                    <h1>Overview</h1>
+
+                </header>
+                <div class="content">
+
+                    An attempt to breakdown the overall CPSD budget from a few perspectives.
+
+                </div>
+            </div>
+        </section>
+
+    <div class="narrative">
+  <div id="cambridgeDESE2017Data" class="graph-right"></div>
+  <h2>How is the budget allocated?</h2>
+
+  <p>
+    This was the first question I had. So I found a breakdown of the budget on the
+    <a href="http://www.doe.mass.edu/finance/statistics/ppx13-17.html" target="_blank">Massachusetts Department of Elementary and Secondary Education</a> website. You can download the data
+    <a href="http://www.doe.mass.edu/finance/statistics/ppx13-17.xlsx">here</a>.
+  </p>
+  <p>
+    This graph shows the breakdown. You can mouse over or click into any section to see the detailed
+    breakdown.
+  </p>
+  <p>
+    It's hard to draw any significant observations from this data although it's interesting to see how the budget is allocated. It immediately made me wonder how this allocation compares to other districts and the state average.
+  </p>
+  <p>
+    So I created the chart below that shows the relative spending in each of these categories across
+    Cambridge, Boston, Somerville, and the state average. These different districts have different budgets so the relative spending doesn't provide the whole picture, but it is still interesting.
+  </p>
+  <p>
+    You can mouse over each circle to see the raw budget numbers as well.
+  </p>
+
+  <div class="clear">
+    <div id="allDESE2017Data" class="graph-left"></div>
+
+    <p>
+      Overall it seems Cambridge has a similar distribution of budget when compared to
+      Somerville, Boston, and the state totals. There are some differences, though,
+      with Cambridge allocating considerably less (by percentage) to teachers when
+      compared to the state totals, but Cambridge is also allocating more to
+      "Insurance, Retirement Programs, and Other" which may factor in some part
+      of the overall teacher compensation.
+    </p>
+    <p>
+      Cambridge is also relatively high on the percentage of the budget allocated
+      to administration, but administration doesn't represent a significant allocation
+      in any district. If Cambridge were to allocate similar amounts to administration
+      as other districts it would only affect the budget by 1.4%.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<div class="contact-method">
+				<span class="icon alt fa-github"></span>
+				<h3>GitHub</h3>
+				<span>This site is open-source and available on GitHub: <a href="https://github.com/jaredcosulich/CPSD">https://github.com/jaredcosulich/CPSD</a></span>
+			</div>
+		</section>
+		<section>
+			<div class="contact-method">
+				<span class="icon alt fa-envelope"></span>
+				<h3>Contact</h3>
+				<span>
+					If you have any questions or comments you can reach me at
+					<a <a href="mailto:jared.cosulich@gmail.com">jared.cosulich@gmail.com</a>
+				</span>
+			</div>
+		</section>
+	</div>
+</section>
+<section id="contact">
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+				<li>&copy; CPSD Data An exploration of Cambridge Public Schools Data</li>
+				<li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+				<li>Jekyll integration: <a href="http://andrewbanchi.ch" target="_blank">Andrew Banchich</a></li>
+
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>
