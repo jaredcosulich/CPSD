@@ -17,8 +17,8 @@ function drawMap(containerId, maDistrictData, maTeacherSalariesData, maMedianHom
 
   function redraw() {
     var t = transform = d3.event.transform;
-    console.log(t)
     svg.style("stroke-width", 1 / t.k).attr("transform", "translate(" + t.x + "," + t.y + ")scale(" + t.k + ")");
+    svg.select("#DISTRICT49").style("stroke-width", 1.2 / t.k)
   }
 
   var projection = d3.geoAlbersUsa()
@@ -71,9 +71,6 @@ function drawMap(containerId, maDistrictData, maTeacherSalariesData, maMedianHom
 
     if (item) {
       item.properties.MedianHomePrice = info["2016 Median Price"];
-
-      var c = color(item)
-      svg.select("#DISTRICT" + item.properties.DISTRICTID).style("fill", c);
     } else {
       console.log("No Median Home Price: " + info["Neighborhood / Town"])
     }
@@ -134,46 +131,49 @@ function drawMap(containerId, maDistrictData, maTeacherSalariesData, maMedianHom
 
   d3.select(self.frameElement).style("height", height + "px");
 
-  window.employees = function() {
-    maDistrictEnrollmentData.forEach(function(info) {
-      var item = maDistrictData.objects.high.geometries.filter(
-        function(i) { return i.properties.DISTCODE4 == info["ORG_CODE"] }
-      )[0];
+  window.salaries = function() {
+    maDistrictData.objects.high.geometries.forEach(function(info) {
+      if (info.properties.AverageSalary) {
+        var value = cleanFloat(info.properties.AverageSalary)
 
-      if (item) {
-        var value = cleanFloat(item.properties.Enrollment) / cleanFloat(item.properties.FTE)
-        console.log(item.properties.DISTNAME, value)
+        var c = d3.scaleThreshold()
+          .domain([40000, 50000, 60000, 70000, 80000, 90000, 100000, 111000])
+          .range(["#fff7ec", "#fee8c8", "#fdd49e", "#fdbb84", "#fc8d59", "#ef6548", "#d7301f", "#b30000", "#7f0000"].reverse());
+
+        svg.select("#DISTRICT" + info.properties.DISTRICTID).style("fill", c(value));
+      } else {
+        svg.select("#DISTRICT" + info.properties.DISTRICTID).style("fill", "#eeeeee");
+      }
+    });
+  }
+
+  window.employees = function() {
+    maDistrictData.objects.high.geometries.forEach(function(info) {
+      if (info.properties.Enrollment && info.properties.FTE) {
+        var value = cleanFloat(info.properties.Enrollment) / cleanFloat(info.properties.FTE)
 
         var c = d3.scaleThreshold()
           .domain([10, 11, 12, 13, 14, 16, 18, 20])
           .range(["#fff7ec", "#fee8c8", "#fdd49e", "#fdbb84", "#fc8d59", "#ef6548", "#d7301f", "#b30000", "#7f0000"]);
 
-        svg.select("#DISTRICT" + item.properties.DISTRICTID).style("fill", c(value));
+        svg.select("#DISTRICT" + info.properties.DISTRICTID).style("fill", c(value));
+      } else {
+        svg.select("#DISTRICT" + info.properties.DISTRICTID).style("fill", "#eeeeee");
       }
     });
   }
 
-  window.salaries = function() {
-    maMedianHomePriceData.forEach(function(info) {
-      var name = info["Neighborhood / Town"]
-      var items = maDistrictData.objects.high.geometries.filter(
-        function(i) { return (i.properties.DISTNAME || "").includes(name) }
-      );
-
-      var item;
-      if (items.length > 1) {
-        item = items.filter(function(i) { return i.properties.DISTNAME == name })[0]
-      }
-
-      if (!item) {
-        item = items[0];
-      }
-
-      if (item) {
-        var c = color(item)
-        svg.select("#DISTRICT" + item.properties.DISTRICTID).style("fill", c);
+  window.homePrices = function() {
+    maDistrictData.objects.high.geometries.forEach(function(info) {
+      if (info.properties.AverageSalary && info.properties.MedianHomePrice) {
+        var c = color(info)
+        svg.select("#DISTRICT" + info.properties.DISTRICTID).style("fill", c);
+      } else {
+        svg.select("#DISTRICT" + info.properties.DISTRICTID).style("fill", "#eeeeee");
       }
     });
   }
 
+  svg.select("#DISTRICT49").style("stroke-width", 1.2)
+  salaries()
 }

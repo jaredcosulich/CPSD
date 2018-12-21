@@ -50,7 +50,7 @@ js:
   <div id="map" class="graph-right"></div>
 
   <p>
-  	Teaching, in all it's forms (e.g. classroom teachers, specialists, coaches, etc)
+  	Teaching, in all it's forms (e.g. classroom teachers, specialists, coaches, benefits, etc)
 		account for the majority of the budget. It seems there are a lot of ways one could
 		examine teaching in Cambridge from a budget perspective.
   </p>
@@ -63,11 +63,13 @@ js:
 		and out using the scroll wheel.
 	</p>
 	<p>
-		The map is colored based on the ratio of teacher salary to median home price
+		The map is colored based on the teacher salaries
 		in each community. You can switch the coloring using the links below.
 	</p>
+	<p>Cambridge is highlighted with a black border.</p>
 	<ul>
-		<li><a href="javascript:salaries()">Teacher Salaries / Median Home Price</a></li>
+		<li><a href="javascript:salaries()">Teacher Salaries</a></li>
+		<li><a href="javascript:homePrices()">Teacher Salaries / Median Home Price</a></li>
 		<li><a href="javascript:employees()">Student Enrollment / Full-Time Employees</a></li>
 	</ul>
 	<p>The graph draws data from:</p>
