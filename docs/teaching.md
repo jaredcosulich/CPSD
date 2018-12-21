@@ -11,6 +11,7 @@ js:
   - data/MATeacherSalaries
   - data/MAMedianHomePrices
   - data/MADistrictEnrollment
+  - data/MASelectedPopulations
   - pages/teaching
 ---
 
@@ -71,6 +72,13 @@ js:
 		<li><a href="javascript:salaries()">Teacher Salaries</a></li>
 		<li><a href="javascript:homePrices()">Teacher Salaries / Median Home Price</a></li>
 		<li><a href="javascript:employees()">Student Enrollment / Full-Time Employees</a></li>
+		<li>
+			<a href="javascript:highNeeds()">High Need Students</a> --
+			<a href="javascript:disadvantaged()">Economically Disadvantaged Students</a>
+		</li>
+		<li>
+			<a href="javascript:needsToEmployees()">High Need Students / Full-Time Employees</a>
+		</li>
 	</ul>
 	<p>The graph draws data from:</p>
 	<ul>

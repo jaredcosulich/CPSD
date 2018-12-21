@@ -1,13 +1,13 @@
 
 var mapInterval = setInterval(function() {
   var containerId = "#map"
-  if (window.topojson && window.maDistricts && window.maTeacherSalaries && window.maMedianHomePrices && window.maDistrictEnrollment && $(containerId).length) {
+  if (window.topojson && window.maDistricts && window.maTeacherSalaries && window.maMedianHomePrices && window.maDistrictEnrollment && window.maSelectedPopulations && $(containerId).length) {
     clearInterval(mapInterval);
-    drawMap(containerId, maDistricts, maTeacherSalaries, maMedianHomePrices, maDistrictEnrollment);
+    drawMap(containerId, maDistricts, maTeacherSalaries, maMedianHomePrices, maDistrictEnrollment, maSelectedPopulations);
   }
 }, 100);
 
-function drawMap(containerId, maDistrictData, maTeacherSalariesData, maMedianHomePriceData, maDistrictEnrollmentData) {
+function drawMap(containerId, maDistrictData, maTeacherSalariesData, maMedianHomePriceData, maDistrictEnrollmentData, maSelectedPopulationData) {
   var width = 750,
       height = 600;
 
@@ -54,6 +54,17 @@ function drawMap(containerId, maDistrictData, maTeacherSalariesData, maMedianHom
     }
   });
 
+  maSelectedPopulationData.forEach(function(info) {
+    var item = maDistrictData.objects.high.geometries.filter(
+      function(i) { return i.properties.DISTCODE8 == info["OrgCode"] }
+    )[0];
+    if (item) {
+      item.properties.HighNeeds = info["High Needs %"];
+      item.properties.HighNeedsNumber = info["High Needs #"];
+      item.properties.Disadvantaged = info["Economically Disadvantaged %"];
+    }
+  });
+
   maMedianHomePriceData.forEach(function(info) {
     var name = info["Neighborhood / Town"]
     var items = maDistrictData.objects.high.geometries.filter(
@@ -96,18 +107,21 @@ function drawMap(containerId, maDistrictData, maTeacherSalariesData, maMedianHom
     var enrollmentNumber = cleanFloat(p.Enrollment)
     var averageSalary = cleanFloat(p.AverageSalary)
     var medianHomePrice = cleanFloat(p.MedianHomePrice)
+    var highNeedsNumber = cleanFloat(p.HighNeedsNumber)
     var fte = cleanFloat(p.FTE)
 
     tooltip
       .classed("hidden", false)
-      .attr("style", "left:"+(mouse[0] - 120)+"px; top:"+(mouse[1] - 120)+"px")
+      .attr("style", "left:"+(mouse[0] - 150)+"px; top:"+(mouse[1] - 150)+"px")
       .attr("transform", "translate(" + t.x + "," + t.y + ")scale(" + t.k + ")")
       .html(
         p.DISTNAME + " (" + p.DISTCODE4 + ")" + "<br/>" +
         p.Enrollment + " Students, " +
         p.FTE + " FTE (" + (parseInt(enrollmentNumber/fte*10)/10) + " Students/FTE)<br/>" +
         "Avg Salary: " + p.AverageSalary + ", Median Home Price: " + (p.MedianHomePrice || "N/A") +
-        (p.MedianHomePrice ? (" (" + parseInt(averageSalary / medianHomePrice * 100) + "%)") : "")
+        (p.MedianHomePrice ? (" (" + parseInt(averageSalary / medianHomePrice * 100) + "%)") : "") + "<br/>" +
+        "High Needs: " + p.HighNeeds + "%, Economically Disadvantaged: " + p.Disadvantaged + "%" + "<br/>" +
+        "(" + (parseInt(highNeedsNumber/fte*10)/10) + " High Needs Students/FTE)"
       );
   }).on("mouseout",  function(d,i) {
     tooltip.classed("hidden", true)
@@ -139,6 +153,54 @@ function drawMap(containerId, maDistrictData, maTeacherSalariesData, maMedianHom
         var c = d3.scaleThreshold()
           .domain([40000, 50000, 60000, 70000, 80000, 90000, 100000, 111000])
           .range(["#fff7ec", "#fee8c8", "#fdd49e", "#fdbb84", "#fc8d59", "#ef6548", "#d7301f", "#b30000", "#7f0000"].reverse());
+
+        svg.select("#DISTRICT" + info.properties.DISTRICTID).style("fill", c(value));
+      } else {
+        svg.select("#DISTRICT" + info.properties.DISTRICTID).style("fill", "#eeeeee");
+      }
+    });
+  }
+
+  window.highNeeds = function() {
+    maDistrictData.objects.high.geometries.forEach(function(info) {
+      if (info.properties.HighNeeds) {
+        var value = cleanFloat(info.properties.HighNeeds)
+
+        var c = d3.scaleThreshold()
+          .domain([20, 30, 40, 50, 60, 70, 80, 90])
+          .range(["#fff7ec", "#fee8c8", "#fdd49e", "#fdbb84", "#fc8d59", "#ef6548", "#d7301f", "#b30000", "#7f0000"]);
+
+        svg.select("#DISTRICT" + info.properties.DISTRICTID).style("fill", c(value));
+      } else {
+        svg.select("#DISTRICT" + info.properties.DISTRICTID).style("fill", "#eeeeee");
+      }
+    });
+  }
+
+  window.disadvantaged = function() {
+    maDistrictData.objects.high.geometries.forEach(function(info) {
+      if (info.properties.Disadvantaged) {
+        var value = cleanFloat(info.properties.Disadvantaged)
+
+        var c = d3.scaleThreshold()
+          .domain([10, 20, 30, 40, 50, 60, 70, 80])
+          .range(["#fff7ec", "#fee8c8", "#fdd49e", "#fdbb84", "#fc8d59", "#ef6548", "#d7301f", "#b30000", "#7f0000"]);
+
+        svg.select("#DISTRICT" + info.properties.DISTRICTID).style("fill", c(value));
+      } else {
+        svg.select("#DISTRICT" + info.properties.DISTRICTID).style("fill", "#eeeeee");
+      }
+    });
+  }
+
+  window.needsToEmployees = function() {
+    maDistrictData.objects.high.geometries.forEach(function(info) {
+      if (info.properties.HighNeedsNumber && info.properties.FTE) {
+        var value = cleanFloat(info.properties.HighNeedsNumber) / cleanFloat(info.properties.FTE)
+        console.log(value)
+        var c = d3.scaleThreshold()
+          .domain([3, 4, 5, 6, 7, 8, 9, 10])
+          .range(["#fff7ec", "#fee8c8", "#fdd49e", "#fdbb84", "#fc8d59", "#ef6548", "#d7301f", "#b30000", "#7f0000"]);
 
         svg.select("#DISTRICT" + info.properties.DISTRICTID).style("fill", c(value));
       } else {
