@@ -18,6 +18,18 @@
 	<script src="https://d3js.org/d3.v5.min.js"></script>
 
 	
+	<script async type="text/javascript" src="../assets/js/topojson.js"></script>
+	
+	<script async type="text/javascript" src="../assets/js/data/MADistricts.js"></script>
+	
+	<script async type="text/javascript" src="../assets/js/data/MATeacherSalaries.js"></script>
+	
+	<script async type="text/javascript" src="../assets/js/data/MAMedianHomePrices.js"></script>
+	
+	<script async type="text/javascript" src="../assets/js/data/MADistrictEnrollment.js"></script>
+	
+	<script async type="text/javascript" src="../assets/js/pages/teaching.js"></script>
+	
 
 </head>
 
@@ -38,10 +50,7 @@
 <!-- Menu -->
 <nav id="menu">
 	<ul class="links">
-        
-		    
 		
-		    
 		
 		    
 		
@@ -57,16 +66,7 @@
 		
 		    
 		
-		
-		    
-		
-		    
-		        <li><a href="http://localhost:4000/all_posts.html">All posts</a></li>
-		    
-		
-		    
-		        <li><a href="http://localhost:4000/generic.html">Generic</a></li>
-		    
+
 		
 		    
 		
@@ -75,17 +75,17 @@
 		    
 		
 		    
-		        <li><a href="http://localhost:4000/summary.html">Summary</a></li>
+		        <li><a href="http://localhost:4000/overview/">Overview</a></li>
 		    
 		
 		    
 		        <li><a href="http://localhost:4000/teaching.html">Teaching</a></li>
 		    
 		
-	</ul>
-	<ul class="actions vertical">
-		<li><a href="#" class="button special fit">Get Started</a></li>
-		<li><a href="#" class="button fit">Log In</a></li>
+		    
+		        <li><a href="http://localhost:4000/summary.html">Summary</a></li>
+		    
+		
 	</ul>
 </nav>
 
@@ -108,84 +108,77 @@
             </div>
         </section>
 
-    <!-- Main -->
-<div id="main">
+    <style>
+	#map {
+		position: relative;
+	}
 
-<!-- One -->
-<section id="one">
-	<div class="inner">
-		<header class="major">
-			<h2>Sed amet aliquam</h2>
-		</header>
-		<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna.</p>
-	</div>
-</section>
+	.land {
+	  fill: #a1a1a1;
+	  stroke: #000;
+	  stroke-width: .1px;
+	}
 
-<!-- Two -->
-<section id="two" class="spotlights">
-	<section>
-		<a href="generic.html" class="image">
-			<img src="assets/images/pic08.jpg" alt="" data-position="center center" />
-		</a>
-		<div class="content">
-			<div class="inner">
-				<header class="major">
-					<h3>Orci maecenas</h3>
-				</header>
-				<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-				<ul class="actions">
-					<li><a href="generic.html" class="button">Learn more</a></li>
-				</ul>
-			</div>
-		</div>
-	</section>
-	<section>
-		<a href="generic.html" class="image">
-			<img src="assets/images/pic09.jpg" alt="" data-position="top center" />
-		</a>
-		<div class="content">
-			<div class="inner">
-				<header class="major">
-					<h3>Rhoncus magna</h3>
-				</header>
-				<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-				<ul class="actions">
-					<li><a href="generic.html" class="button">Learn more</a></li>
-				</ul>
-			</div>
-		</div>
-	</section>
-	<section>
-		<a href="generic.html" class="image">
-			<img src="assets/images/pic10.jpg" alt="" data-position="25% 25%" />
-		</a>
-		<div class="content">
-			<div class="inner">
-				<header class="major">
-					<h3>Sed nunc ligula</h3>
-				</header>
-				<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-				<ul class="actions">
-					<li><a href="generic.html" class="button">Learn more</a></li>
-				</ul>
-			</div>
-		</div>
-	</section>
-</section>
+	.hidden {
+	  display: none;
+	}
 
-<!-- Three -->
-<section id="three">
-	<div class="inner">
-		<header class="major">
-			<h2>Massa libero</h2>
-		</header>
-		<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.</p>
-		<ul class="actions">
-			<li><a href="generic.html" class="button next">Get Started</a></li>
-		</ul>
-	</div>
-</section>
+	div.tooltip {
+	  color: #222;
+	  background: #fff;
+	  padding: .5em;
+	  text-shadow: #f5f5f5 0 1px 0;
+	  border-radius: 2px;
+	  box-shadow: 0px 0px 2px 0px #a6a6a6;
+	  opacity: 0.9;
+	  position: absolute;
+		font-size: 15px;
+	}
 
+	p {
+		margin-bottom: 1em;
+	}
+</style>
+
+<div class="narrative">
+  <div id="map" class="graph-right"></div>
+
+  <p>
+  	Teaching, in all it's forms (e.g. classroom teachers, specialists, coaches, etc)
+		account for the majority of the budget. It seems there are a lot of ways one could
+		examine teaching in Cambridge from a budget perspective.
+  </p>
+	<p>
+		So I've gathered data from a variety of sources and have begun putting together a
+		few comparisons of different districts around Massachusetts.
+	</p>
+	<p>
+		You can mouse over the map to see all available data for each district and zoom in
+		and out using the scroll wheel.
+	</p>
+	<p>
+		The map is colored based on the ratio of teacher salary to median home price
+		in each community. You can switch the coloring using the links below.
+	</p>
+	<ul>
+		<li><a href="javascript:salaries()">Teacher Salaries / Median Home Price</a></li>
+		<li><a href="javascript:employees()">Student Enrollment / Full-Time Employees</a></li>
+	</ul>
+	<p>The graph draws data from:</p>
+	<ul>
+		<li>
+			<a href="http://profiles.doe.mass.edu/statereport/teachersalaries.aspx">MA Department of Education Teacher Salaries</a>
+		</li>
+		<li>
+			<a href="http://www.doe.mass.edu/infoservices/reports/enroll/default.html?yr=1617">MA Department of Education Student Enrollment</a>
+		</li>
+		<li>
+			<a href="https://www.bostonmagazine.com/best-places-to-live-2017-single-family-homes/">Home prices in Greater Boston from Boston Magazine</a>
+		</li>
+		<li>
+			<a href="https://github.com/LearningLab/ma-districts">Massachusetts District Boundaries</a>
+		</li>
+	</ul>
 </div>
 
 

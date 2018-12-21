@@ -6,6 +6,7 @@ snippet: A general breakdown of the budget
 description: An attempt to breakdown the overall CPSD budget from a few perspectives.
 permalink: /overview/
 image: assets/images/budget_overview.png
+nav-menu: true
 js:
   - /data/CambridgeDESE2017
   - /data/AllDESE2017
