@@ -56,8 +56,8 @@ js:
 		examine teaching in Cambridge from a budget perspective.
   </p>
 	<p>
-		So I've gathered data from a variety of sources and have begun putting together a
-		few comparisons of different districts around Massachusetts.
+		So I've gathered data from a variety of sources and have begun putting together
+		comparisons of Massachusetts districts.
 	</p>
 	<p>
 		You can mouse over the map to see all available data for each district and zoom in
