@@ -10,7 +10,8 @@
 	<script src="https://d3js.org/d3.v5.min.js"></script>
 
 	{% for js in page.js %}
-	<script async type="text/javascript" src="../assets/js{{ js }}.js"></script>
+		{% capture asset %}assets/js/{{ js }}.js{% endcapture %}
+		<script async type="text/javascript" src="{{ asset | relative_url }}"></script>
 	{% endfor %}
 
 </head>

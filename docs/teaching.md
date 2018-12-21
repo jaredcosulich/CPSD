@@ -6,12 +6,12 @@ snippet: A look at teaching in Cambridge
 image: assets/images/teaching.jpg
 nav-menu: true
 js:
-  - /data/MADistricts
-  - /data/MATeacherSalaries
-  - /data/MAMedianHomePrices
-  - /data/MADistrictEnrollment
-  - /topojson
-  - /pages/teaching
+  - topojson
+  - data/MADistricts
+  - data/MATeacherSalaries
+  - data/MAMedianHomePrices
+  - data/MADistrictEnrollment
+  - pages/teaching
 ---
 
 <style>

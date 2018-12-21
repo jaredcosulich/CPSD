@@ -8,9 +8,9 @@ permalink: /overview/
 image: assets/images/budget_overview.png
 nav-menu: true
 js:
-  - /data/CambridgeDESE2017
-  - /data/AllDESE2017
-  - /pages/overview
+  - data/CambridgeDESE2017
+  - data/AllDESE2017
+  - pages/overview
 ---
 
 <div class='narrative'>
